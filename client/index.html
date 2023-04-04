@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chat Room</title>
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="heading">Chat App</h1>
+			<!-- <button></button> -->
+		</header>
+
+		<main class="main">
+			<div id="sign-in" class="chat-container">
+				<label for="username" class="sign-in--label">Username:</label
+				><input
+					autocomplete="false"
+					type="text"
+					name="username"
+					id="username"
+					class="sign-in--input"
+				/>
+
+				<label for="chatroom" class="sign-in--label">Room:</label>
+				<select name="chatroom" id="chatroom" class="sign-in--input">
+					<option value="" class="sign-in--option">Select a room...</option>
+				</select>
+
+				<button id="join-button" class="sign-in--join">Join Room</button>
+			</div>
+
+			<div id="chat" class="chat-container chat-window">
+				<section
+					id="message-output"
+					class="chat-window--messages scrollbar"
+				></section>
+				<form action="" id="message-form" class="chat-window--form">
+					<input
+						type="text"
+						name="message-input"
+						id="message-input"
+						class="chat-window--input"
+						placeholder="Enter your message..."
+					/>
+					<input
+						type="submit"
+						id="message-submit"
+						class="chat-window--submit"
+						value="Send"
+					/>
+				</form>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<small class="copyright">ANOA Web Solutions Ltd.</small>
+		</footer>
+
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="module" src="./scripts/app.js"></script>
+	</body>
+</html>

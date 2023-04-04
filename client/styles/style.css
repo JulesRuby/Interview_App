@@ -1,0 +1,237 @@
+:root {
+	--color1: rgb(12, 33, 62);
+	--color1-lo: rgba(12, 33, 62, 0.5);
+	--color2: rgb(18, 18, 39);
+	--color2-bump: rgb(26, 26, 56);
+	--color2-lo: rgba(18, 18, 39, 0.5);
+	--color3: rgb(233, 225, 195);
+	--color4: rgb(217, 158, 62);
+	--color5: rgb(252, 208, 137);
+
+	--max-height-chat: calc(100vh - 84px - 64px - 3rem - 1rem - 40px);
+	--max-height-chat2: calc(100vh - 84px - 64px - 3rem);
+}
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	align-items: center;
+	color: var(--color3);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--color2);
+	font-family: Arial, sans-serif;
+	min-height: 100vh;
+	padding: 1.5rem 0;
+}
+
+input,
+input::placeholder,
+select,
+select::placeholder,
+option {
+	background-color: var(--color1);
+	color: var(--color3);
+	cursor: pointer;
+	outline: none;
+}
+
+.header {
+	border-radius: 0.5rem 0.5rem 0 0;
+	width: 80%;
+	max-width: 1080px;
+	background-color: var(--color1);
+	padding: 1.5rem 0;
+}
+
+.heading {
+	text-align: center;
+	/* margin-bottom: 20px; */
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(18, 18, 39);
+	flex-grow: 1;
+	width: 80%;
+	max-width: 1080px;
+	/* padding: 1rem; */
+}
+
+.chat-container {
+	padding-bottom: 1rem;
+}
+
+.chat-window {
+	display: none;
+	/* display: flex; */
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+/* #sign-in {
+	justify-self: flex-start;
+} */
+
+.sign-in--label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+/* input[type='text'], */
+.sign-in--input,
+.chat-window--input {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	padding: 1rem;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border-radius: 0.5rem;
+	border: none;
+	outline: 0;
+	font-size: 1rem;
+	/* letter-spacing: 0.05rem; */
+}
+
+.chat-window--input {
+	/* padding: 0.75rem; */
+	margin-bottom: unset;
+	border-radius: 0 0 0 0.5rem;
+	cursor: unset;
+}
+
+.sign-in--join,
+.chat-window--submit {
+	/* display: block; */
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 5px;
+	border-radius: 0.5rem;
+	border: none;
+	color: var(--color1);
+	background-color: var(--color4);
+	padding: 10px 20px;
+	transition: all 200ms ease;
+}
+
+.chat-window--submit {
+	border-radius: 0 0 0.5rem 0;
+}
+
+.sign-in--join:hover,
+.chat-window--submit:hover {
+	background-color: var(--color5);
+}
+
+.chat-window {
+	display: none;
+	max-height: var(--max-height-chat2);
+	overflow: hidden;
+}
+
+
+/* section.chat-window--messages::-webkit-scrollbar { */
+#message-output::-webkit-scrollbar {
+	width: 10px;
+	border-radius: 0.25rem;
+}
+
+#message-output::-webkit-scrollbar-track {
+	background-color: var(--color-4);
+	border-radius: 0.25rem;
+}
+
+
+#message-output::-webkit-scrollbar-thumb {
+	background-color: var(--color-1);
+	border-radius: 0.25rem;
+}
+
+#sign-in {
+	padding: 1.25rem;
+}
+
+.chat-window--messages {
+	background-color: #fff;
+	background-color: var(--color1);
+	background-color: var(--color2-bump);
+	display: flex;
+	flex-direction: column;
+	/* padding: 20px; */
+	padding: 1.25rem;
+	/* border-radius: 5px; */
+	/* height: 400px; */
+	/* max-height: var(--max-height-chat); */
+	/* max-height: 500px; */
+	flex-grow: 1;
+	overflow-y: auto;
+	overflow-y: scroll;
+}
+
+.message,
+.screenshot-container {
+	display: inline-block;
+	border-radius: 0.5rem;
+	background-color: var(--color1-lo);
+	margin-bottom: 10px;
+	padding: 0.75rem;
+	padding-left: 1.25rem;
+	box-shadow: 5px 5px 3px 1px var(--color2-lo);
+	/* overflow: hidden; */
+	overflow-wrap: break-word;
+	word-break: normal;
+	width: fit-content;
+	max-width: 100%;
+}
+
+.message {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.screenshot-container {
+	display: flex;
+	flex-grow: 0;
+	flex-direction: column;
+	/* padding: 20px; */
+	padding: 1.25rem;
+}
+
+.username {
+	color: var(--color4);
+	display: inline-block;
+	padding-right: 1rem;
+	padding-bottom: 0.5rem;
+	margin-left: -0.5rem;
+	font-weight: 700;
+}
+
+.chat-window--form {
+	display: flex;
+}
+
+.chat-window--submit {
+}
+
+.footer {
+	border-radius: 0 0 0.5rem 0.5rem;
+	background-color: var(--color1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem 0;
+	width: 80%;
+	max-width: 1080px;
+}
+
+.copyright {
+}
