@@ -14,12 +14,12 @@ app.use(express.static(path.join(__dirname + '/client')));
  */
 const rooms = ['Room 1', 'Room 2', 'Room 3'];
 
-
 /** TASK 1 **/
 /******************************************************
  * Decide how to store global users variable
  * attach username and room passed in from `roomJoined` to socket.id key
-**************************************************/
+ **************************************************/
+// define users structure here
 // users;
 
 io.on('connection', socket => {
@@ -45,8 +45,10 @@ io.on('connection', socket => {
 	socket.on('message', message => {
 		console.log(message);
 		// get user info => (username and room) from stored user
-		const username = '';
-		const room = '';
+		const username = ''; // get username from user
+		const room = ''; // get room from user
+
+		// Add !duck command logic here
 
 		// send user message to the current room
 		io.to(room).emit('message', { username, message });
@@ -57,7 +59,7 @@ io.on('connection', socket => {
 	 *
 	 * Create a chat command !duck
 	 *
-	 * 	=> server recognizes prefix and command name
+	 * 	=> server recognizes prefix and command name within the socket.on('message')
 	 *
 	 * 	=> server makes a call to the API
 	 * 	(URL = https://random-d.uk/api/v2/random)
@@ -85,7 +87,6 @@ io.on('connection', socket => {
 		 */
 	});
 });
-
 
 const PORT = process.env.PORT || 5000;
 
